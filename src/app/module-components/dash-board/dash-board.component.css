@@ -1,0 +1,24 @@
+.adjustcontainer {
+  padding-left: 0px;
+  background: white;
+  padding-right: 0px;
+
+}
+
+.menuheader{
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: .7rem !important;
+}
+.menuItem{
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.active {
+  border-bottom: rgba(172, 151, 240) 2px solid;
+}
+
+ul {
+    margin-block-end: 0em;
+}

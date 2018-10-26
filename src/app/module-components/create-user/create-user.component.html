@@ -1,0 +1,58 @@
+<div class="modal-body gray">
+  <h3 class="modal-title text-center" style="color: #7A7A7A; margin-bottom: 30px;"><strong>Logistics Department</strong></h3>
+  <form [formGroup]="createUserForm">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="title" class="col-form-label">First Name:</label>
+          <input type="text" class="form-control" formControlName="firstName" id="firstName" placeholder="First Name">
+        </div>
+        <div class="form-group">
+          <label for="youtubeLink" class="col-form-label">User Name(Email):</label>
+          <input type="email" class="form-control" formControlName="email" name="email" id="email" placeholder="Email:"
+            required>
+
+        </div>
+        <div class="form-group">
+          <label>Confirm Password :</label>
+          <input type="password" class="form-control" formControlName="confirmPassword" name="confirmPassword" id="confirmPassword"
+            placeholder="Confirm Password:" required>
+        </div>
+      </div>
+      <div class="col-md-6">
+
+        <div class="form-group">
+          <label for="expiryorderdate" class="col-form-label">Last Name:</label>
+          <input type="text" class="form-control" formControlName="lastName" id="lastName" placeholder="Last Name">
+
+        </div>
+        <div class="form-group">
+          <label for="Specialrequired" class="col-form-label">Password:</label>
+          <input type="password" class="form-control" formControlName="password" name="password" id="password"
+            placeholder="Password" required>
+        </div>
+        <div class="form-group">
+          <label>Role:</label>
+          <select class="form-control" required="required" name="role" id="role" placeholder="Select Role"
+            formControlName="role">
+            <option value="logistic">Logistic</option>
+            <option value="factory">Factory</option>
+            <option value="account">Account</option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+    <div class="tile-footer">
+      <div class="row" style="justify-content: flex-end;">
+        <button class="btn btn-primary bgbutton" style="margin-right: 24px" [disabled]="!createUserForm.valid" (click)="createUser(createUserForm)">
+          Create User
+        </button>
+
+        <button class="btn btn-primary btnstel" style="margin-right: 24px" (click)="closeCreatemodel()">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,95 @@
+.avatar {
+  height: 40px;
+  width: 40px;
+  margin-top: 4px;
+  float: right;
+  margin-right: 48px;
+}
+
+.headrback {
+  height: 48px;
+}
+
+.header {
+  margin-left: 48px;
+  height: 40px;
+  margin-top: 4px;
+}
+
+.menu {
+  height: 44px;
+  margin-top: 4px;
+
+}
+
+a {
+  color: #212529;
+}
+
+.menuItem {
+
+  height: 100%;
+  vertical-align: middle;
+}
+
+.active {
+  border-bottom: rgba(172, 151, 240) 2px solid;
+}
+
+a:hover {
+  color: #212529;
+  text-decoration: underline;
+}
+
+.menulistblock {
+  display: block;
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 1024px) {
+  .menulistblock {
+    display: none;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  .custompr {
+    left: -48px !important;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (min-width: 600px) {
+  .custompr {
+    left: -24px !important;
+  }
+}
+
+
+
+
+
+.custompr {
+  padding-bottom: 0px !important;
+}
+
+@media (min-width: 600px) and (max-width: 1025px) {
+  .avatar {
+    margin-right: 1rem !important;
+  }
+
+  .header {
+    margin-left: 1rem !important;
+  }
+}
+
+li:focus {
+  border: 0px solid !important;
+  border-radius: 0px;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}

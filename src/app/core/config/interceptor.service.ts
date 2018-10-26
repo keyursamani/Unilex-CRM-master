@@ -1,0 +1,47 @@
+import { Injectable } from '@angular/core';
+import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse} from '@angular/common/http';
+import {Router} from '@angular/router';
+import {Observable} from 'rxjs';
+import { tap } from 'rxjs/operators';
+import {catchError} from 'rxjs/internal/operators';
+
+@Injectable()
+export class InterceptorService implements HttpInterceptor{
+  constructor(
+    private router: Router
+  ) {}
+
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
+
+    const authToken = JSON.parse(window.localStorage.getItem('token'));
+    let authReq;
+      authReq = request.clone({});
+    return next.handle(authReq).pipe(
+      tap((event: HttpEvent<any>) => {
+        if (event instanceof HttpResponse) {
+          console.log("calleed success");
+          // success
+        }
+      }, (err: any) => {
+        if (err instanceof HttpErrorResponse) {
+          console.log("calleed ERROR");
+          if (err.status === 401) {
+            this.router.navigate(['/home']);
+          }
+        }
+      })
+    );
+
+    /*return next.handle(authReq).tap((event: HttpEvent<any>) => {
+      if (event instanceof HttpResponse) {
+        // success
+      }
+    }, (err: any) => {
+      if (err instanceof HttpErrorResponse) {
+        if (err.status === 401) {
+          this.router.navigate(['/auth/login']);
+        }
+      }
+    });*/
+  }
+}

@@ -1,0 +1,28 @@
+<app-header></app-header>
+<div class="adjustbackground">
+    <div class="row" style="justify-content: flex-end; margin-bottom: 24px;">
+        <button style="margin-right: 48px;" (click)="adduser()" class="btn"><i class="fa fa-plus"></i> Add User</button>
+    </div>
+  <div class="container adjustcontainer">
+    <table class="table table-striped customm-table shadow  bg-white  ">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor="let user of userlist">
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.role}}</td>
+          <td class="setAction" [routerLink] = "['/create-user', user._id]" ><a>Edit </a>|
+            <a (click)="deleteuser(user._id)"> Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

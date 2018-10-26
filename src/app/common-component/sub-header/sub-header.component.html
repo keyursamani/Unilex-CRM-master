@@ -1,0 +1,33 @@
+<div class="menuheader">
+  <ul class="list-inline menu mobileMenu ">
+    <li class="list-inline-item menuItem mobilemenylistItem" [ngClass]="{'active': selectedSubmenu == 'default'}" (click)="selectSection('default')">
+      <a class="nav-link" [routerLink]="['/dashboard']">
+        overdue</a>
+    </li>
+    <li class="list-inline-item menuItem mobilemenylistItem" [ngClass]="{'active': selectedSubmenu == 'Orderover-7days'}" (click)="selectSection('Orderover-7days')">
+      <a class="nav-link" [routerLink]="['/dashboard/Orderover-7days']">overdue in next 7 days</a>
+    </li>
+    <li class="list-inline-item menuItem mobilemenylistItem" [ngClass]="{'active': selectedSubmenu == 'total-order-value'}" (click)="selectSection('total-order-value')">
+      <a class="nav-link" [routerLink]="['/dashboard/total-order-value']">Total
+        over Value in Hand</a>
+    </li>
+    <li class="list-inline-item menuItem mobilemenylistItem" [ngClass]="{'active': selectedSubmenu == 'tonnage'}" (click)="selectSection('tonnage')">
+      <a class="nav-link" [routerLink]="['/dashboard/tonnage']">Tonnage</a>
+    </li>
+    <li class="list-inline-item menuItem mobilemenylistItem" [ngClass]="{'active': selectedSubmenu == 'payment-due'}" (click)="selectSection('payment-due')">
+        <a class="nav-link" [routerLink]="['/dashboard/payment-due']">Payment Due</a>
+      </li>
+    <li class="list-inline-item menuItem mobilemenylistItem" [ngClass]="{'active': selectedSubmenu == 'GST-refund'}" (click)="selectSection('GST-refund')">
+      <a class="nav-link" [routerLink]="['/dashboard/GST-refund']">GST-refund</a>
+    </li>
+    <li class="list-inline-item menuItem mobilemenylistItem" [ngClass]="{'active': selectedSubmenu == 'Meis-due'}" (click)="selectSection('Meis-due')">
+      <a class="nav-link" [routerLink]="['/dashboard/Meis-due']"> Meis
+        Due
+      </a>
+    </li>
+    <li class="list-inline-item menuItem mobilemenylistItem" [ngClass]="{'active': selectedSubmenu == 'DBK-due'}" (click)="selectSection('DBK-due')">
+      <a class="nav-link" [routerLink]="['/dashboard/DBK-due']"> DBK
+        Due</a>
+    </li>
+  </ul>
+</div>

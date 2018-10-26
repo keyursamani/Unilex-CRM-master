@@ -1,0 +1,46 @@
+.menuheader {
+  margin-left: 5%;
+  margin-right: 5%;
+
+}
+
+.menuItem {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.active {
+  border-bottom: rgba(172, 151, 240) 2px solid;
+}
+
+ul {
+  margin-block-end: 0em;
+}
+
+a {
+  color: #212529;
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+
+  .menuheader {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+
+  }
+
+  .mobilemenylistItem {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-bottom: rgba(172, 151, 240) .5px solid;
+   
+  }
+  .active {
+    
+    background: linear-gradient(#AC97F0,#AC97F0);
+  }
+
+  
+}

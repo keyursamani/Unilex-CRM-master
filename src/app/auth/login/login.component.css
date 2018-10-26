@@ -1,0 +1,102 @@
+.leftScrren {
+
+  margin-top: 10%;
+}
+
+.rightScrren {
+
+  margin-top: 5%;
+}
+
+.form-control {
+  border: 0;
+  border-bottom: 1px solid;
+  border-radius: 0px;
+}
+
+.form-control {
+  font-size: 1.2rem !important;
+}
+
+.form-group {
+  margin-bottom: 2.4rem !important;
+}
+
+extarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: rgba(172, 151, 240, 0.8);
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0) inset, 0 0 0px rgba(126, 239, 104, 0.9);
+  outline: 0 none;
+}
+
+.btn-primary {
+  width: 100%;
+  font-family: Raleway-SemiBold;
+  color: rgba(256, 256, 256);
+  letter-spacing: 1px;
+  line-height: 40px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-color: rgba(172, 151, 240);
+  border-radius: 40px;
+  background: rgba(172, 151, 240);
+
+}
+
+.formSpacing {
+  width: 50%;
+  margin-left: 25%;
+}
+
+.loginImage {
+  width: 90%;
+  height: 90%;
+
+}
+
+.mobileloginImage {
+  display: none;
+  width: 100%
+}
+
+.cusomtPageSetup {
+  margin-top: 48px;
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  .loginImage {
+    display: none;
+  }
+
+  .mobileloginImage {
+    width: 100%;
+    display: block;
+  }
+
+  .formSpacing {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+}
+
+.customcontainer {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}

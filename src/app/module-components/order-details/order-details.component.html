@@ -1,0 +1,38 @@
+<app-header></app-header>
+<div class="adjustbackground">
+  <div class="row" style="justify-content: flex-end; margin-bottom: 24px;">
+      <button style="margin-right: 48px;" (click)="addOredr()" class="btn"><i class="fa fa-plus"></i> Add Order</button>
+  </div>
+  <div class="container adjustcontainer">
+    <table class="table table-striped customm-table shadow  mb-5 bg-white table-responsive-custom table-responsive ">
+      <thead>
+        <tr>
+          <th> Order Date </th>
+          <th> Expiry Delivery Date </th>
+          <th> Order Details </th>
+          <th> Sales Order no. </th>
+          <th> Customer Code </th>
+          <th> Value </th>
+          <th> Mode of Shipment </th>
+          <th> Quantity </th>
+          <th style="width: 12%"> Action </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orderList">
+          <td>{{order.po.internalorderdate}}</td>
+          <td>{{order.po.expiryorderdate}}</td>
+          <td>{{order.po.salesorderno}}</td>
+          <td>{{order.po.salesorderno}}</td>
+          <td>{{order.po.customercode}}</td>
+          <td>{{order.po.customercode}}</td>
+          <td>{{order.po.Shipmentmode}}</td>
+          <td>5</td>
+          <td class="setAction"><a [routerLink]="['/edit-orderdetails',order._id ]" >Edit </a></td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+</div>

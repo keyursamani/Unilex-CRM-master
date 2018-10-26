@@ -1,0 +1,199 @@
+<div class="modal-body gray">
+  <h3 class="modal-title text-center" style="color: #7A7A7A; margin-bottom: 30px;"><strong>Logistics Department</strong></h3>
+  <form [formGroup]="orderForm">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="title" class="col-form-label">Internal Order Date:</label>
+          <input type="text" class="form-control" formControlName="internalorderdate" id="internalorderdate"
+            placeholder="MM/DD/YY" bsDatepicker>
+        </div>
+        <div class="form-group">
+          <label for="expiryorderdate" class="col-form-label">Expiry Delivery Date:</label>
+          <input type="text" class="form-control" formControlName="expiryorderdate" id="expiryorderdate" placeholder="MM/DD/YY"
+            bsDatepicker>
+
+        </div>
+
+        <div class="form-group">
+          <label for="youtubeLink" class="col-form-label">Customer Code:</label>
+          <input type="number" class="form-control" formControlName="customercode" name="customercode" id="customercode"
+            placeholder="Customer Code" required>
+
+        </div>
+
+        <div class="form-group">
+          <label for="Specialrequired" class="col-form-label">Special Required:</label>
+          <select class="form-control" required="required" name="Specialrequired" id="Specialrequired" formControlName="Specialrequired">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Buy/Produce</label>
+          <select class="form-control" required="required" name="buyproduce" id="buyproduce" formControlName="buyproduce">
+            <option value="buy">Buy</option>
+            <option value="produce">Produce</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="sequence" class="col-form-label">GST No:</label>
+          <input type="text" class="form-control" name="gstno" id="gstno" formControlName="gstno" placeholder="GST NO."
+            required>
+        </div>
+        <div class="form-group">
+          <label for="sequence" class="col-form-label">Shipping Marks:</label>
+          <input type="text" class="form-control" name="shippingmarks" formControlName="shippingmarks" id="shippingmarks"
+            placeholder="Shipping Marks" required>
+        </div>
+        <div class="form-group">
+          <label for="sequence" class="col-form-label">Lastdate of despatch:</label>
+          <input type="text" class="form-control" name="lastdateofdespatch" id="lastdateofdespatch" formControlName="lastdateofdespatch"
+            placeholder="Lastdate of despatch" bsDatepicker required>
+        </div>
+        <div class="form-group">
+          <label for="sequence" class="col-form-label">Name of transporter:</label>
+          <input type="text" class="form-control" name="nameoftransporter" formControlName="nameoftransporter" id="nameoftransporter"
+            placeholder="Name of transporter" required>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="title" class="col-form-label">Internal Order No:</label>
+          <input type="text" class="form-control" required="required" name="interOrderNo" formControlName="interOrderNo"
+            id="interOrderNo" placeholder="No" required>
+
+        </div>
+        <div class="form-group">
+          <label for="description" class="col-form-label">Sales Order No:</label>
+          <input type="number" class="form-control" name="salesorderno" id="salesorderno" required="required"
+            formControlName="salesorderno" placeholder="Order No" required />
+
+        </div>
+
+
+
+
+        <div class="form-group">
+          <label for="youtubeLink" class="col-form-label">Mode of Shipment:</label>
+          <select class="form-control" required="required" name="Shipmentmode" id="Shipmentmode" formControlName="Shipmentmode">
+            <option value="seeways">See Ways</option>
+            <option value="landways">Land Ways</option>
+            <option value="airways">Air Ways</option>
+
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="sequence" class="col-form-label">Inco Terms:</label>
+          <input type="text" class="form-control" name="incoterms" id="incoterms" formControlName="incoterms"
+            placeholder="Terms" required>
+        </div>
+
+        <div class="form-group">
+          <label>PSS Required</label>
+          <select class="form-control" required="required" name="pssrequired" id="pssrequired" formControlName="pssrequired">
+            <option value="yes">Yse</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="sequence" class="col-form-label">Country of destination:</label>
+          <select class="form-control" required="required" name="countryofdestination" formControlName="countryofdestination">
+            <option value="IND">INDIA</option>
+            <option value="US">USA</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="sequence" class="col-form-label">Despatched from Tarapur to:</label>
+          <select class="form-control" required="required" name="despatchedfromtarapurto" id="despatchedfromtarapurto"
+            formControlName="despatchedfromtarapurto">
+            <option value="IND">INDIA</option>
+            <option value="US">USA</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="sequence" class="col-form-label">Mode of despatch:</label>
+          <select class="form-control" required="required" name="despatchedfromtarapurto" id="despatchedfromtarapurto"
+            formControlName="despatchedfromtarapurto">
+            <option value="AIR">AIR</option>
+            <option value="SEE">SEE</option>
+            <option value="LAND">LAND</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="sequence" class="col-form-label">Paletization at:</label>
+          <input type="text" class="form-control" formControlName="paletization" name="paletization" id="paletization"
+            placeholder="Paletization" required>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <label>Product Details:</label>
+        <div class="col-sm-12">
+          <div class="panel panel-default" formArrayName="productdetails">
+
+            <div class="panel-body" *ngFor="let position of orderForm.get('productdetails')['controls']; let pointIndex=index"
+              [formGroupName]="pointIndex">
+
+
+              <div class="form-inline mb-3">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="product" name="product" formControlName="product"
+                    placeholder="Product" style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
+                </div>
+                <div class="form-group">
+                  <input type="number" class="form-control" id="qty" name="qty" formControlName="qty" placeholder="Qty."
+                    style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="application" name="application" formControlName="application"
+                    placeholder="Application" style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="currency" name="currency" formControlName="currency"
+                    placeholder="Currency" style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
+                </div>
+                <div class="form-group">
+                  <input type="number" class="form-control" id="rate" name="rate" formControlName="rate" placeholder="Rate"
+                    style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
+                </div>
+                <div class="form-group">
+                  <input type="number" class="form-control" id="value" name="value" formControlName="value" placeholder="Value"
+                    style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
+                </div>
+                <div class="input-group">
+
+                  <button class="btn btn-danger" (click)="deletePosition(pointIndex)">
+                    <i class="fa fa-trash"></i>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+            <div class="row addprodyc">
+              <button class="btn btn-success btnstel" (click)="addPosition()">
+                <i class="fa fa-plus"> Add Product</i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tile-footer">
+      <div class="row" style="justify-content: flex-end;">
+        <button class="btn btn-primary bgbutton" style="margin-right: 24px" (click)="closemodel()">
+          Cancel
+        </button>
+
+        <button class="btn btn-primary btnstel" style="margin-right: 24px" [disabled]="!orderForm.valid" (click)="addOrder(orderForm)">
+          Save
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

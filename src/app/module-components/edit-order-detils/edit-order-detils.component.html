@@ -1,0 +1,741 @@
+<app-header></app-header>
+<div class="adjustbackground" style="overflow: auto;">
+  <div class="container adjustcontainer">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tile">
+          <div>
+            <h3>Order Details</h3>
+            <h6>PO</h6>
+          </div>
+          <!-- PO Section start here -->
+          <form [formGroup]="poForm">
+            <fieldset [disabled]="PODeaprtmentFlagL">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="title" class="col-form-label">Internal Order Date:</label>
+                    <input type="text" class="form-control" formControlName="internalorderdate" id="internalorderdate"
+                      placeholder="MM/DD/YY" bsDatepicker>
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Expiry Delivery Date:</label>
+                    <input type="text" class="form-control" formControlName="expiryorderdate" id="expiryorderdate"
+                      placeholder="MM/DD/YY" bsDatepicker>
+
+                  </div>
+
+                  <div class="form-group">
+                    <label for="youtubeLink" class="col-form-label">Customer Code:</label>
+                    <input type="number" class="form-control" name="customercode" id="customercode" formControlName="customercode"
+                      placeholder="Customer Code" required>
+
+                  </div>
+
+                  <div class="form-group">
+                    <label for="sequence" class="col-form-label">Special Required:</label>
+                    <select class="form-control" required="required" name="Specialrequired" id="Specialrequired"
+                      formControlName="Specialrequired">
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Buy/Produce</label>
+                    <select class="form-control" required="required" name="buyproduce" id="buyproduce" formControlName="buyproduce">
+                      <option value="buy">Buy</option>
+                      <option value="produce">Produce</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="sequence" class="col-form-label">GST No:</label>
+                    <input type="text" class="form-control" name="gstno" id="gstno" formControlName="gstno" placeholder="GST NO."
+                      required>
+                  </div>
+                  <div class="form-group">
+                    <label for="sequence" class="col-form-label">Shipping Marks:</label>
+                    <input type="text" class="form-control" name="shippingmarks" formControlName="shippingmarks" id="shippingmarks"
+                      placeholder="Shipping Marks" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="sequence" class="col-form-label">Lastdate of despatch:</label>
+                    <input type="text" class="form-control" name="lastdateofdespatch" id="lastdateofdespatch"
+                      formControlName="lastdateofdespatch" placeholder="Lastdate of despatch" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="sequence" class="col-form-label">Name of transporter:</label>
+                    <input type="text" class="form-control" name="nameoftransporter" formControlName="nameoftransporter"
+                      id="nameoftransporter" placeholder="Name of transporter" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+
+                  <div class="form-group">
+                    <label for="title" class="col-form-label">Internal Order No:</label>
+                    <input type="text" class="form-control" formControlName="interOrderNo" required="required" name="interOrderNo"
+                      id="interOrderNo" placeholder="Title" required>
+
+                  </div>
+
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Sales Order No:</label>
+                    <input type="number" class="form-control" name="salesorderno" id="salesorderno" required="required"
+                      formControlName="salesorderno" placeholder="Order No" required />
+
+                  </div>
+
+                  <div class="form-group">
+                    <label for="youtubeLink" class="col-form-label">Mode of Shipment:</label>
+                    <select class="form-control" required="required" name="Shipmentmode" id="Shipmentmode"
+                      formControlName="Shipmentmode">
+                      <option value="seeways">See Ways</option>
+                      <option value="landways">Land Ways</option>
+                      <option value="airways">Air Ways</option>
+
+                    </select>
+
+                  </div>
+
+                  <div class="form-group">
+                    <label for="sequence" class="col-form-label">Inco Terms:</label>
+                    <input type="number" class="form-control" formControlName="incoterms" name="incoterms" id="incoterms"
+                      placeholder="Terms" required>
+
+                  </div>
+
+                  <div class="form-group">
+                    <label>PSS Required</label>
+                    <select class="form-control" required="required" formControlName="pssrequired">
+                      <option value="yes">Yse</option>
+                      <option value="no">No</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="sequence" class="col-form-label">Country of destination:</label>
+                    <select class="form-control" required="required" name="countryofdestination" formControlName="countryofdestination">
+                      <option value="IND">INDIA</option>
+                      <option value="US">USA</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="sequence" class="col-form-label">Despatched from Tarapur to:</label>
+                    <select class="form-control" required="required" name="despatchedfromtarapurto" id="despatchedfromtarapurto"
+                      formControlName="despatchedfromtarapurto">
+                      <option value="IND">INDIA</option>
+                      <option value="US">USA</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="sequence" class="col-form-label">Mode of despatch:</label>
+                    <select class="form-control" required="required" name="despatchedfromtarapurto" id="despatchedfromtarapurto"
+                      formControlName="despatchedfromtarapurto">
+                      <option value="AIR">AIR</option>
+                      <option value="SEE">SEE</option>
+                      <option value="LAND">LAND</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="sequence" class="col-form-label">Paletization at:</label>
+                    <input type="text" class="form-control" formControlName="paletization" name="paletization" id="paletization"
+                      placeholder="Paletization" required>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group">
+                  <label>Product Details:</label>
+                  <div class="col-sm-12">
+                    <div class="panel panel-default" formArrayName="productdetails">
+                      <table class="table tabledesing">
+                        <tr>
+                          <td>Product</td>
+                          <td>Qty</td>
+                          <td>Appliaction</td>
+                          <td>Currency</td>
+                          <td>Rate</td>
+                          <td>Value</td>
+                          <td>Special Packing</td>
+                          <td>PSS Reguired</td>
+                          <td>PSS Date</td>
+                          <td>Packing Remark</td>
+                          <td>Quality</td>
+                        </tr>
+                      </table>
+                      <div class="panel-body" *ngFor="let position of poForm.get('productdetails')['controls']; let pointIndex=index"
+                        [formGroupName]="pointIndex">
+          
+          
+                        <div class="form-inline mb-3">
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="product" name="product" formControlName="product"
+                              placeholder="Product" style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
+                          </div>
+                          <div class="form-group">
+                            <input type="number" class="form-control" id="qty" name="qty" formControlName="qty" placeholder="Qty."
+                              style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="application" name="application" formControlName="application"
+                              placeholder="Application" style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="currency" name="currency" formControlName="currency"
+                              placeholder="Currency" style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
+                          </div>
+                          <div class="form-group">
+                            <input type="number" class="form-control" id="rate" name="rate" formControlName="rate" placeholder="Rate"
+                              style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
+                          </div>
+                          <div class="form-group">
+                            <input type="number" class="form-control" id="value" name="value" formControlName="value" placeholder="Value"
+                              style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;">
+                          </div>
+                          <div class="input-group">
+          
+                            <button class="btn btn-danger" (click)="deletePosition(pointIndex)">
+                              <i class="fa fa-trash"></i>
+                            </button>
+                          </div>
+          
+                        </div>
+                      </div>
+                      <div class="row addprodyc">
+                        <button class="btn btn-success btnstel" (click)="addPosition()">
+                          <i class="fa fa-plus"> Add Product</i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div class="row" style="justify-content: flex-end;">
+              <button class="btn btn-primary btnstel" *ngIf="EditPODeaprtmentFlag&&hiddenPODeaprtmentFlag" (click)="editPoDetails()" style="margin-right: 24px">
+                Edit
+              </button>
+              <button class="btn btn-primary btnstel" *ngIf="!EditPODeaprtmentFlag" [disabled]="!poForm.valid" (click)="addPoDetails(poForm)"
+                style="margin-right: 24px">
+                Save
+              </button>
+              <button class="btn btn-primary btnstel" *ngIf="!EditPODeaprtmentFlag" (click)="editPoDetails()" style="margin-right: 24px">
+                Cancel
+              </button>
+            </div>
+            <div class="tile-footer">
+
+            </div>
+          </form>
+          <form [formGroup]="productionFom">
+
+            <h6>Production</h6>
+            <fieldset [disabled]="ProductionFlag">
+              <!-- Production Section start here -->
+              <div class="row">
+                <div class="col-md-6">
+
+                  <div class="form-group">
+                    <label for="title" class="col-form-label">Schedule Prod Date:</label>
+                    <input type="text" class="form-control" formControlName="scheduleproddate" id="scheduleproddate"
+                      name="scheduleproddate" placeholder="MM/DD/YY" bsDatepicker>
+
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Production Status:</label>
+                    <select class="form-control" required="required" name="productionstatus" id="productionstatus"
+                      formControlName="productionstatus">
+                      <option>DONE</option>
+                      <option>DO</option>
+                    </select>
+                  </div>
+
+                </div>
+                <div class="col-md-6">
+
+                  <div class="form-group">
+                    <label for="title" class="col-form-label">Raw Material Availablity:</label>
+                    <select class="form-control" required="required" name="rawmaterialavailablity" id="rawmaterialavailablity"
+                      formControlName="rawmaterialavailablity">
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Actual Production Date:</label>
+                    <input type="text" class="form-control" formControlName="actualproductionDate" id="actualproductionDate"
+                      name="actualproductionDate" placeholder="MM/DD/YY" bsDatepicker>
+
+                  </div>
+
+                </div>
+              </div>
+            </fieldset>
+            <div class="row" style="justify-content: flex-end;">
+              <button class="btn btn-primary btnstel" *ngIf="EditProductionFlag&&hiddenProductionFlag" (click)="editProdutionDetails()" style="margin-right: 24px">
+                Edit
+              </button>
+
+              <button class="btn btn-primary btnstel" *ngIf="!EditProductionFlag" [disabled]="!productionFom.valid"
+                (click)="addProductionDetails(productionFom)" style="margin-right: 24px">
+                Save
+              </button>
+              <button class="btn btn-primary btnstel" *ngIf="!EditProductionFlag" (click)="editProdutionDetails()"
+                style="margin-right: 24px">
+                Cancel
+              </button>
+            </div>
+            <div class="tile-footer">
+
+            </div>
+          </form>
+          <form [formGroup]="pssFOrm">
+            <!-- PSS Section start here -->
+            <h6>PSS</h6>
+            <fieldset [disabled]="PSSDepartmentFlag">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="title" class="col-form-label">PSS Dispatch Date:</label>
+                    <input type="text" class="form-control" formControlName="PSSdispatchdate" id="PSSdispatchdate" name="PSSdispatchdate"
+                      placeholder="MM/DD/YY" bsDatepicker>
+
+                  </div>
+                </div>
+                <div class="col-md-6">
+
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">PSS Approval:</label>
+                    <select class="form-control" required="required" name="PSSapproval" id="PSSapproval"
+                      formControlName="PSSapproval">
+                      <option>Approved</option>
+                      <option>Not Approved</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div class="row" style="justify-content: flex-end;">
+              <button class="btn btn-primary btnstel" *ngIf="EditPSSDepartmentFlag &&hiddenPSSDepartmentFlag" (click)="editPssDetails()" style="margin-right: 24px">
+                Edit
+              </button>
+              <button class="btn btn-primary btnstel" *ngIf="!EditPSSDepartmentFlag" [disabled]="!pssFOrm.valid"
+                (click)="addPssDetails(pssFOrm)" style="margin-right: 24px">
+                Save
+              </button>
+              <button class="btn btn-primary btnstel" *ngIf="!EditPSSDepartmentFlag" (click)="editPssDetails()" style="margin-right: 24px">
+                Cancel
+              </button>
+            </div>
+            <div class="tile-footer">
+            </div>
+          </form>
+          <form [formGroup]="packingFOrm">
+            <!-- Packing Section start here -->
+            <h6>Packing</h6>
+            <fieldset [disabled]="PackingDepartmentFlag">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="title" class="col-form-label">Packing Material Available:</label>
+                    <select class="form-control" required="required" name="packingmaterialavailable" id="PSSapproval"
+                      formControlName="packingmaterialavailable">
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="title" class="col-form-label">Packing Date:</label>
+                    <input type="text" class="form-control" formControlName="packingdate" id="packingdate" name="packingdate"
+                      placeholder="MM/DD/YY" bsDatepicker>
+                  </div>
+                </div>
+                <div class="col-md-6">
+
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Packing Status:</label>
+                    <select class="form-control" required="required" name="packingstatus" id="packingstatus"
+                      formControlName="packingstatus">
+                      <option value="Completed">Completed</option>
+                      <option value="Uncompleted">Uncompleted</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div class="row" style="justify-content: flex-end;">
+              <button class="btn btn-primary btnstel" *ngIf="EditPackingDepartmentFlag  &&hiddenPackingDepartmentFlag" (click)="editPackingDetails()"
+                style="margin-right: 24px">
+                Edit
+              </button>
+              <button class="btn btn-primary btnstel" *ngIf="!EditPackingDepartmentFlag" (click)="addPackingDetails(packingFOrm)"
+                [disabled]="!packingFOrm.valid" style="margin-right: 24px">
+                Save
+              </button>
+              <button class="btn btn-primary btnstel" *ngIf="!EditPackingDepartmentFlag" (click)="editPackingDetails()"
+                style="margin-right: 24px">
+                Cancel
+              </button>
+            </div>
+            <div class="tile-footer">
+            </div>
+          </form>
+          <form [formGroup]="shipmentForm">
+            <!-- Shipment Booking  Section start here -->
+            <h6>Shipment Booking</h6>
+            <fieldset [disabled]="ShipmentBookingFlag">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="title" class="col-form-label">Container Booking Date:</label>
+                    <input type="text" class="form-control" formControlName="containerbookingdate" id="containerbookingdate"
+                      name="containerbookingdate" placeholder="MM/DD/YY" bsDatepicker>
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Voyage:</label>
+                    <input type="text" class="form-control" name="voyage" id="voyage" required="required"
+                      formControlName="voyage" placeholder="voyage" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Vessel Sailing Date:</label>
+                    <input type="text" class="form-control" formControlName="vesselsailingdate" id="vesselsailingdate"
+                      name="vesselsailingdate" placeholder="MM/DD/YY" bsDatepicker>
+                  </div>
+                </div>
+                <div class="col-md-6">
+
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Vessel Name:</label>
+                    <input type="text" class="form-control" name="vesselname" id="vesselname" required="required"
+                      formControlName="vesselname" placeholder="Vessel Name" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Vessel Cut-off Date:</label>
+                    <input type="text" class="form-control" formControlName="Vesselcutoffdate" id="Vesselcutoffdate"
+                      name="Vesselcutoffdate" placeholder="MM/DD/YY" bsDatepicker>
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Vessel Eta:</label>
+                    <input type="text" class="form-control" name="VesselEta" id="VesselEta" required="required"
+                      formControlName="VesselEta" placeholder="Description" required />
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div class="row" style="justify-content: flex-end;">
+              <button class="btn btn-primary btnstel" *ngIf="EditShipmentBookingFlag &&hiddenShipmentBookingFlag" (click)="editShipmentDetails()"
+                style="margin-right: 24px">
+                Edit
+              </button>
+              <button class="btn btn-primary btnstel" *ngIf="!EditShipmentBookingFlag" (click)="addshipmentDetails(shipmentForm)"
+                [disabled]="!shipmentForm.valid" style="margin-right: 24px">
+                Save
+              </button>
+              <button class="btn btn-primary btnstel" *ngIf="!EditShipmentBookingFlag" (click)="editShipmentDetails()"
+                style="margin-right: 24px">
+                Cancel
+              </button>
+            </div>
+            <div class="tile-footer">
+            </div>
+          </form>
+          <form [formGroup]="preShiptmentForm">
+            <!-- Pre Shipment Documents Section start here -->
+            <h6>Pre Shipment Documents</h6>
+            <fieldset [disabled]="PreShipmentDocumentsFlag">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="title" class="col-form-label">Pre Shipment Documents:</label>
+                    <select class="form-control" required="required" name="Preshipmentdocuments" id="Preshipmentdocuments"
+                      formControlName="Preshipmentdocuments">
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Checklist:</label>
+                    <select class="form-control" required="required" name="Checklist" id="Checklist" formControlName="Checklist">
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">First Print of BL:</label>
+                    <select class="form-control" required="required" name="firstprintofBL" id="firstprintofBL"
+                      formControlName="firstprintofBL">
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">BL No:</label>
+                    <input type="text" class="form-control" name="blNo" id="blNo" required="required" formControlName="blNo"
+                      placeholder="No " required />
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">BL Date:</label>
+                    <input type="text" class="form-control" formControlName="blDate" id="blDate" name="blDate"
+                      placeholder="MM/DD/YY" bsDatepicker>
+                  </div>
+                </div>
+                <div class="col-md-6">
+
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Custom Invoice No:</label>
+                    <input type="text" class="form-control" name="custominvoiceno" id="custominvoiceno" required="required"
+                      formControlName="custominvoiceno" placeholder="Invoice" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">BL Draft:</label>
+                    <select class="form-control" required="required" name="blDraft" id="blDraft" formControlName="blDraft">
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Customer Approval on BL:</label>
+                    <select class="form-control" required="required" name="customerapprovalonBL" id="customerapprovalonBL"
+                      formControlName="customerapprovalonBL">
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Container No:</label>
+                    <input type="text" class="form-control" name="containerno" id="containerno" required="required"
+                      formControlName="containerno" placeholder="No" required />
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div class="row" style="justify-content: flex-end;">
+
+              <button class="btn btn-primary btnstel" *ngIf="EditPreShipmentDocumentsFlag &&hiddenPreShipmentDocumentsFlag" (click)="editPreShipmentDetails()"
+                style="margin-right: 24px">
+                Edit
+              </button>
+
+
+              <button class="btn btn-primary btnstel"  *ngIf="!EditPreShipmentDocumentsFlag" (click)="addpreshipmentDetails(preShiptmentForm)" [disabled]="!preShiptmentForm.valid"
+                style="margin-right: 24px">
+                Save
+              </button>
+              <button class="btn btn-primary btnstel" *ngIf="!EditPreShipmentDocumentsFlag" (click)="editPreShipmentDetails()"
+                style="margin-right: 24px">
+                Cancel
+              </button>
+            </div>
+            <div class="tile-footer">
+            </div>
+          </form>
+          <form [formGroup]="PostShipmentDocuments">
+            <h6>Post-Shipment Documents</h6>
+            <fieldset [disabled]="PostShipmentDocumentsFlag">
+              <!-- Post Shipment Documents Section start here -->
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="title" class="col-form-label">Shipment Document Release Date:</label>
+                    <input type="text" class="form-control" formControlName="shipmentdocumentreleasedate" id="shipmentdocumentreleasedate"
+                      name="shipmentdocumentreleasedate" placeholder="MM/DD/YY" bsDatepicker>
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Commercial invoice No:</label>
+                    <input type="text" class="form-control" name="Commercialinvoiceno" id="Commercialinvoiceno"
+                      required="required" formControlName="Commercialinvoiceno" placeholder="No " required />
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Post Shipment Docs Courier Pod:</label>
+                    <input type="text" class="form-control" name="postshipmentDocscourierpod" id="postshipmentDocscourierpod"
+                      required="required" formControlName="postshipmentDocscourierpod" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Documents Recived by Customer:</label>
+                    <select class="form-control" required="required" name="documentsrecivedbycustomer" id="documentsrecivedbycustomer"
+                      formControlName="documentsrecivedbycustomer">
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Documents Sent to:</label>
+                    <input type="text" class="form-control" name="documentssent" id="documentssent" required="required"
+                      formControlName="documentssent" placeholder="Description" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Post Shipment Document:</label>
+                    <select class="form-control" required="required" name="postShipmentdocument" id="postShipmentdocument"
+                      formControlName="postShipmentdocument">
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Commercial invoice Date:</label>
+                    <input type="text" class="form-control" formControlName="commercialinvoicedate" id="commercialinvoicedate"
+                      name="commercialinvoicedate" placeholder="MM/DD/YY" bsDatepicker>
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Post Shipment Docs Courier Date:</label>
+                    <input type="text" class="form-control" formControlName="PostshipmentDocscourierdate" id="PostshipmentDocscourierdate"
+                      name="PostshipmentDocscourierdate" placeholder="MM/DD/YY" bsDatepicker>
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Actual time of arrival of Vessel:</label>
+                    <input type="text" class="form-control" formControlName="actualtimeofarrivalofvessel" id="actualtimeofarrivalofvessel"
+                      name="actualtimeofarrivalofvessel" placeholder="MM/DD/YY" bsDatepicker>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div class="row" style="justify-content: flex-end;">
+                <button class="btn btn-primary btnstel" *ngIf="EditPostShipmentDocumentsFlag&&hiddenPostShipmentDocumentsFlag" (click)="editPostShipmentDetails()"
+                style="margin-right: 24px">
+                Edit
+              </button>
+
+
+              <button class="btn btn-primary btnstel " *ngIf="!EditPostShipmentDocumentsFlag" (click)="addpostshipmentDetails(PostShipmentDocuments)"
+                [disabled]="!PostShipmentDocuments.valid" style="margin-right: 24px">
+                Save
+              </button>
+              <button class="btn btn-primary btnstel" *ngIf="!EditPostShipmentDocumentsFlag" (click)="editPostShipmentDetails()"
+                style="margin-right: 24px">
+                Cancel
+              </button>
+              
+            </div>
+            <div class="tile-footer">
+            </div>
+          </form>
+          <form [formGroup]="accounDepartfomr">
+            <h6>Accounts Department:</h6>
+            <fieldset [disabled]="AccountsDepartmentFlag">
+              <!-- Accounts Department Section start here -->
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="title" class="col-form-label">Payment Recived Date:</label>
+                    <input type="text" class="form-control" formControlName="paymentrecived" id="paymentrecived" name="paymentrecived"
+                      placeholder="MM/DD/YY" bsDatepicker>
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">GST Refund Realization:</label>
+                    <textarea type="text" class="form-control" name="description" id="description" required="required"
+                      formControlName="gstRefundRealization" placeholder="Description" required></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Raw material rate:</label>
+                    <input type="number" class="form-control" name="rawmaterialrate" id="rawmaterialrate" required="required"
+                      formControlName="rawmaterialRate" placeholder="Rate" required />
+                  </div>
+                </div>
+                <div class="col-md-6">
+
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">GST Refund Amount:</label>
+                    <input type="number" class="form-control" name="GSTrefundamount" id="GSTrefundamount" required="required"
+                      formControlName="GSTrefundamount" placeholder="Description" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">Forward Contract Rate:</label>
+                    <input type="number" class="form-control" name="forwardcontractrate" id="forwardcontractrate"
+                      required="required" formControlName="forwardcontractrate" placeholder="Rate" required />
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div class="row" style="justify-content: flex-end;">
+                <button class="btn btn-primary btnstel" *ngIf="EditAccountsDepartmentFlag &&hiddenAccountsDepartmentFlag" (click)="editAccountDetails()"
+                style="margin-right: 24px">
+                Edit
+              </button>
+
+
+              <button class="btn btn-primary btnstel"   *ngIf="!EditAccountsDepartmentFlag" [disabled]="!accounDepartfomr.valid" (click)="addaddountDetails(accounDepartfomr)"
+              style="margin-right: 24px">
+              Save
+            </button>
+              <button class="btn btn-primary btnstel" *ngIf="!EditAccountsDepartmentFlag" (click)="editAccountDetails()"
+                style="margin-right: 24px">
+                Cancel
+              </button>
+             
+            </div>
+            <div class="tile-footer">
+            </div>
+          </form>
+          <form [formGroup]="incentiveForm">
+            <!-- Incentive Section start here -->
+            <h6>Incentive:</h6>
+            <fieldset [disabled]="IncentiveDapartmentFlag">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="title" class="col-form-label">MEIS Filing Date:</label>
+                    <input type="text" class="form-control" formControlName="MEISfilingdate" id="MEISfilingdate" name="MEISfilingdate"
+                      placeholder="MM/DD/YY" bsDatepicker>
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">MEIS Realization:</label>
+                    <select class="form-control" required="required" name="MEISrealization" id="MEISrealization"
+                      formControlName="MEISrealization">
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">DBK Realization:</label>
+                    <select class="form-control" required="required" name="DBKrealization" id="DBKrealization"
+                      formControlName="DBKrealization">
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">MEIS Amount:</label>
+                    <input type="number" class="form-control" name="MEISamount" id="MEISamount" required="required"
+                      formControlName="MEISamount" placeholder="Amount" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="description" class="col-form-label">DBK Amount:</label>
+                    <input type="number" class="form-control" name="DBKamount" id="DBKamount" required="required"
+                      formControlName="DBKamount" placeholder="Amount" required>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div class="row" style="justify-content: flex-end;">
+                <button class="btn btn-primary btnstel" *ngIf="EditIncentiveDapartmentFlag &&hiddenIncentiveDapartmentFlag" (click)="editIncentiveDetails()"
+                style="margin-right: 24px">
+                Edit
+              </button>
+
+
+              <button [disabled]="!incentiveForm.valid"  *ngIf="!EditIncentiveDapartmentFlag"  (click)="addincentiveDetails(incentiveForm)" class="btn btn-primary btnstel"
+              style="margin-right: 24px">
+              Save
+
+            </button>
+              <button class="btn btn-primary btnstel" *ngIf="!EditIncentiveDapartmentFlag" (click)="editIncentiveDetails()"
+                style="margin-right: 24px">
+                Cancel
+              </button>
+              
+            </div>
+            <div class="tile-footer">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

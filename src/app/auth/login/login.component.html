@@ -1,0 +1,29 @@
+<div class="row customcontainer">
+    <div class="col-sm-12 col-md-6  col-lg-6  col-xl-6 leftScrren">
+
+        <form [formGroup]="loginForm" class="formSpacing">
+            <img src="../../../assets/images/unilex-login.png" class="img-responsive mobileloginImage" />
+          <fieldset class="form-group">
+            <h1>Unilex CRM</h1>
+          </fieldset>
+          <fieldset class="form-group cusomtPageSetup">
+      
+            <input type="text" class="form-control" required="required" formControlName="email" id="email" placeholder="Username" name="email">
+          </fieldset>
+          <fieldset class="form-group">
+      
+            <input type="password" class="form-control" required="required" formControlName="password"  id="password" placeholder="Password" name="password">
+          </fieldset>
+          <fieldset class="form-group">
+            <button type="submit" (click)="clickMe(loginForm)" [disabled]="!loginForm.valid" class="btn btn-primary">Login</button>
+          </fieldset>
+        </form>
+      </div>
+      
+      
+      <div class="col-sm-12 col-md-6  col-lg-6  col-xl-6 rightScrren">
+      
+        <img src="../../../assets/images/unilex-login.png" class="img-responsive loginImage" />
+      </div>
+</div>
+
